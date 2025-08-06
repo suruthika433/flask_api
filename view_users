@@ -1,0 +1,15 @@
+import requests
+
+user_id = input("Enter user ID to view: ")
+url = f"http://127.0.0.1:5000/users/{user_id}"
+
+response = requests.get(url)
+
+if response.status_code == 200:
+    user = response.json()
+    print("\n User Details:")
+    print(f" ID    : {user_id}")
+    print(f" Name : {user['name']}")
+    print(f" Email: {user['email']}")
+else:
+    print(" User not found.")
