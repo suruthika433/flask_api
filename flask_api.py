@@ -45,3 +45,8 @@ def delete_user(user_id):
 
 if __name__ == '__main__':
     app.run(port=5000, use_reloader=False)
+with open("flask_api.py", "w") as f:
+    f.write(code)
+    
+!python flask_api.py
+
